@@ -10,7 +10,7 @@ export default function Main() {
         <span>Чтобы приступить нажмите на кнопку ниже</span>
       </div>
       <div className='p-3'>
-        <button type="button" class="btn btn-primary">
+        <button type="button" className="btn btn-primary">
           <Link className="text-white text-decoration-none" to="/create-pdf">Создать PDF</Link>
         </button>
       </div>

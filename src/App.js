@@ -2,8 +2,8 @@ import React from 'react'
 import Main from './Main/Main';
 
 import { Route, Redirect, Switch, withRouter } from "react-router-dom"
-import PdfComponent from './PdfComponent/PdfComponent';
 import Nav from './Nav/Nav';
+import GetData from './GetData/GetData';
 
 function App() {
   return (
@@ -11,11 +11,11 @@ function App() {
      <Nav />
       <Switch>
         <Route path='/home' component={Main} />
-        <Route path='/create-pdf' component={PdfComponent} />
+        <Route path='/create-pdf' component={GetData} />
         <Redirect from='/' to='/home' />
       </Switch>
     </div>
   );
 }
 
-export default App;
+export default withRouter(App);

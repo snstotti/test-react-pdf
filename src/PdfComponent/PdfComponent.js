@@ -1,25 +1,68 @@
 import React from 'react'
+import { Page, Text, View, Document, StyleSheet, Font } from '@react-pdf/renderer';
 
-export default function PdfComponent() {
-    return (
-        <form class="m-auto w-50 mt-5">
-            <div class="mb-3">
-                <label class="form-label">Ф.И.О.</label>
-                <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" />
-                <div id="familyHelp" class="form-text">Введите ФИО через пробел (Иванов Иван Иванович)</div>
-            </div>
-            <div class="mb-3">
-                <label class="form-label">Текст заявления</label>
-                <textarea class="form-control" aria-label="With textarea"></textarea>
-                <div id="familyHelp" class="form-text">Введите текст заявления в свободной форме</div>
-            </div>
-            <div class="mb-3 form-check">
-                <div class="input-group">
-                    <input class="form-control py-2 border-right-0 border" type="date" />
-                </div>
-                <label class="form-check-label" for="exampleCheck1">Выберите дату</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Скачать заявление</button>
-        </form>
-    )
-}
+
+Font.register({
+  family: 'Roboto',
+  src: 'https://cdnjs.cloudflare.com/ajax/libs/ink/3.1.10/fonts/Roboto/roboto-light-webfont.ttf',
+});
+// Create styles
+const styles = StyleSheet.create({
+  page: {
+    width: '95%',
+    backgroundColor: '#d5e2f5',
+    fontFamily: 'Roboto'
+  },
+  title: {
+    // width: '95%',
+    margin: 10,
+    marginBottom: 50,
+    textAlign: 'right',
+    padding: 10,
+  },
+  subTitle: {
+    fontSize: 24,
+    textAlign: 'center',
+  },
+  content: {
+    margin: 10,
+    padding: 10,
+    marginBottom: 50,
+  },
+  footer: {
+    // width:'95%',
+    textAlign: 'right',
+    margin: 10,
+    padding: 10,
+  }
+});
+
+// Create Document Component
+export const PdfComponent = ({ name, text, data, surname }) => (
+  <Document>
+    <Page size="A4" style={styles.page}>
+      <View style={styles.title}>
+
+        <Text>Генеральному директору</Text>
+        <Text>ООО "Рога и Копыта"</Text>
+        <Text>Иванову И.И</Text>
+        <Text>от {name}</Text>
+
+      </View>
+
+      <View style={styles.subTitle}>
+        <Text>Заявление</Text>
+      </View>
+
+      <View style={styles.content}>
+        <Text>{text}</Text>
+      </View>
+
+      <View style={styles.footer}>
+        <Text>{data}</Text>
+        <Text>{surname}</Text>
+      </View>
+
+    </Page>
+  </Document>
+)
