@@ -14,7 +14,6 @@ const styles = StyleSheet.create({
     fontFamily: 'Roboto'
   },
   title: {
-    // width: '95%',
     margin: 10,
     marginBottom: 50,
     textAlign: 'right',
@@ -30,7 +29,6 @@ const styles = StyleSheet.create({
     marginBottom: 50,
   },
   footer: {
-    // width:'95%',
     textAlign: 'right',
     margin: 10,
     padding: 10,

@@ -1,6 +1,5 @@
 import React from 'react'
 import Main from './Main/Main';
-
 import { Route, Redirect, Switch, withRouter } from "react-router-dom"
 import Nav from './Nav/Nav';
 import GetData from './GetData/GetData';

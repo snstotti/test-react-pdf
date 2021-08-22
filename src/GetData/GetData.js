@@ -23,13 +23,8 @@ export default function GetData() {
         text={state.text}
         data={state.data.split('-').reverse().join('-')}
         surname={state.name.split(' ')[0]} />
-    // name={name}
-    // text={"Текст заявления"}
-    // data={"23.10.1990"}
-    // surname={"Фамилия"} />
+  
 
-
-    console.log(state);
     return (
         <form className="m-auto w-50 mt-5">
             <div className="mb-3">
@@ -44,11 +39,8 @@ export default function GetData() {
             </div>
             <div className="d-flex justify-content-between w-100 align-items-center">
                 <div className="form-check p-0 w-50">
-                    
-                    
                         <label className="form-label" htmlFor="exampleCheck1">Выберите дату</label>
                         <input value={state.data} onChange={(e) => update(e)} className="form-control py-2 border-right-0 border" name="data" type="date" />
-                   
                 </div>
                 <div onClick={() => setState({ name: '', text: '', data: '' })} className="mt-4" >
                     <PDFDownloadLink className="btn btn-primary"

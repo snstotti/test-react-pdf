@@ -6,7 +6,6 @@ export default function Nav() {
         <nav className="nav bg-light justify-content-center">
             <Link className="nav-link active" aria-current="page" to="/home">Главная</Link>
             <Link className="nav-link" to="/create-pdf">Создать PDF файл</Link>
-            
         </nav>
     )
 }
