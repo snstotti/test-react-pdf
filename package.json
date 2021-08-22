@@ -1,5 +1,6 @@
 {
   "name": "test-react-pdff",
+  "homepage": "https://snstotti.github.io/test-react-pdf/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
